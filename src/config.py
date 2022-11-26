@@ -7,10 +7,12 @@ from typing import Optional
 
 import httpx
 
-from logger import create_logger
+from dotenv import load_dotenv
+
 from util import validate_port
 
-logger = create_logger("config")
+# Load a development .env file if available
+load_dotenv()
 
 # common config
 CSRF_URL: str = "https://res.windscribe.com/res/logintoken"
@@ -24,12 +26,18 @@ EPHEM_URL: str = STATICIP + "load"
 DEL_EPHEM_URL: str = STATICIP + "deleteEphPort"
 SET_EPHEM_URL: str = STATICIP + "postEphPort"
 
+DEBUG: bool = bool(os.environ.get("WS_DEBUG"))
+
 USERNAME: Optional[str] = os.environ.get("WS_USERNAME")
 PASSWORD: Optional[str] = os.environ.get("WS_PASSWORD")
-PORT: int = validate_port(os.environ.get("WS_EPHEMERAL_PORT"))
 
-if not all([USERNAME, PASSWORD]):
-    logger.error("Environment variables: Username and Password need to be set")
+QBUSERNAME: Optional[str] = os.environ.get("QB_USERNAME")
+QBPASSWORD: Optional[str] = os.environ.get("QB_PASSWORD")
+QBPORT: int = validate_port(os.environ.get("QB_PORT"))
+QBHOST: Optional[str] = os.environ.get("QB_HOST")
+
+if not all([USERNAME, PASSWORD, QBUSERNAME, QBPASSWORD, QBPORT, QBHOST]):
+    print("Environment variables: Usernames, passwords, ports, and host are all required.")
     sys.exit(1)
 
 # some HTML id for the login purpose

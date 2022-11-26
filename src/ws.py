@@ -7,7 +7,6 @@
 Windscribe module allow to setup the ephemeral port
 """
 
-import logging
 import re
 from typing import TypedDict, Union
 
@@ -18,6 +17,7 @@ from logger import create_logger
 
 logger = create_logger("ws")
 
+from qbit import set_qbit_port
 
 class Csrf(TypedDict):
     """CSRF type dict"""
@@ -33,12 +33,12 @@ class Windscribe:
     """
 
     # pylint: disable=redefined-outer-name
-    def __init__(self, logger: logging.Logger) -> None:
+    def __init__(self, logger=logger) -> None:
         headers = {
             "origin": config.BASE_URL,
             "referer": config.LOGIN_URL,
             # pylint: disable=line-too-long
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
         }
         self.client = httpx.Client(headers=headers, cookies=config.COOKIES)
 
@@ -100,8 +100,9 @@ class Windscribe:
         return res
 
     def _set_ephm_port(self) -> dict[str, Union[dict[str, Union[str, int]], int]]:
+        # Sending an empty port to WS returns a matching port pair
         data = {
-            "port": config.PORT,
+            "port": "",
             "ctime": self.csrf["csrf_time"],
             "ctoken": self.csrf["csrf_token"],
         }
@@ -124,6 +125,7 @@ class Windscribe:
 
         if res["success"] == 1:
             self.logger.info("Port renewed successfully.")
+            set_qbit_port(res['epf']['int'])
         else:
             self.logger.error("Port renewal failed, check config or open suport ticket")
 

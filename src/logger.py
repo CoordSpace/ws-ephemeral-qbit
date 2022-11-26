@@ -2,11 +2,10 @@
 Module to setup logging
 """
 import logging
-import os
+import config
 
 # logging setup
-DEBUG: bool = bool(os.environ.get("WS_DEBUG"))
-LEVEL: int = logging.DEBUG if DEBUG else logging.INFO
+LEVEL: int = logging.DEBUG if config.DEBUG else logging.INFO
 
 BASIC_FORMAT: str = "%(asctime)s:%(levelname)8s:%(name)5s:%(message)s"
 

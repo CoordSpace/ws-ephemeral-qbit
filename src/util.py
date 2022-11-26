@@ -5,14 +5,11 @@ from typing import Optional
 
 
 def validate_port(value: Optional[str]) -> int:
-    """helps to validate port number.
-    it need to be withing 2000 to 65365"""
+    """Just a quick check/convert of the port, used for local qbit instance"""
     if value is None:
-        raise ValueError("Valid port nubmer is required")
+        raise ValueError("Valid port number is required")
 
     port = int(value.strip())
-    if 2000 > port or 65365 < port:
-        raise ValueError("Valid port nubmer need to be within 2000 to 65365 port range")
 
     return port
 
