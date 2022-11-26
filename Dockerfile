@@ -7,7 +7,7 @@ RUN apt-get install -y --no-install-recommends build-essential gcc
 
 COPY requirements.txt /tmp/requirements.txt
 
-RUN python3 wheel --no-cache-dir --no-deps --wheel-dir /wheels -r /tmp/requirements.txt
+RUN pip3 install wheel && pip3 wheel --no-cache-dir --no-deps --wheel-dir /wheels -r /tmp/requirements.txt
 
 FROM base
 
