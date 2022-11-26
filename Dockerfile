@@ -2,16 +2,12 @@ FROM python:3.11-slim as base
 
 from base as builder
 
-RUN mkdir /install
-WORKDIR /install
-
-COPY requirements.txt .
-
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends build-essential gcc
 
-RUN python3 -m pip install -U pip
-RUN python -m pip install --install-option="--prefix=/install"  -r requirements.txt
+COPY requirements.txt /tmp/requirements.txt
+
+RUN python3 wheel --no-cache-dir --no-deps --wheel-dir /wheels -r /tmp/requirements.txt
 
 FROM base
 
@@ -21,8 +17,12 @@ ENV QB_USERNAME=${QB_USERNAME}
 ENV QB_PASSWORD=${QB_PASSWORD}
 ENV QB_EPHEMERAL_PORT=${QB_PORT}
 
-COPY --from=builder /install /usr/local
-COPY src /app
 WORKDIR /app
+
+COPY --from=base /wheels /wheels
+
+RUN pip3 install --no-cache-dir /wheels/*
+
+COPY src/ .
 
 CMD ["python3", "run.py"]
