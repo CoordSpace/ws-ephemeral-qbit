@@ -1,6 +1,6 @@
 # WS-EPHEMERAL-QBIT
 
-This project aims to automate setting up an ephemeral matched port on windscribe's VPN service then setting a qBittorrent client's config to match. Once the setup is done it sleeps for next 6 days before renewal. This tool assumes you have a windscribe pro account and a qBittorrent client with accessible webui.
+This project aims to automate requesting an ephemeral matched port from windscribe then update a qBittorrent client's config to match. Once the setup is done it sleeps for 6 days before requesting a new port. This tool assumes you have a windscribe pro account and a qBittorrent client with accessible webui.
 
 ## Docker Compose Setup
 
