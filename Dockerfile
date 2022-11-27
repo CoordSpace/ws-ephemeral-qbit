@@ -1,6 +1,6 @@
 FROM python:3.11-slim as base
 
-from base as builder
+FROM base as builder
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends build-essential gcc
@@ -13,6 +13,7 @@ FROM base as deploy
 
 ENV WS_USERNAME=${WS_USERNAME}
 ENV WS_PASSWORD=${WS_PASSWORD}
+ENV WS_TOTP_TOKEN=${WS_TOTP_TOKEN}
 ENV QB_USERNAME=${QB_USERNAME}
 ENV QB_PASSWORD=${QB_PASSWORD}
 ENV QB_HOST=${QB_HOST}

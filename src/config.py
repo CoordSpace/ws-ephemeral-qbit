@@ -30,6 +30,7 @@ DEBUG: bool = bool(os.environ.get("WS_DEBUG"))
 
 USERNAME: Optional[str] = os.environ.get("WS_USERNAME")
 PASSWORD: Optional[str] = os.environ.get("WS_PASSWORD")
+TOTP_TOKEN: Optional[str] = os.environ.get("WS_TOTP_TOKEN")
 
 QBUSERNAME: Optional[str] = os.environ.get("QB_USERNAME")
 QBPASSWORD: Optional[str] = os.environ.get("QB_PASSWORD")

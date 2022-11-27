@@ -18,6 +18,7 @@ from logger import create_logger
 logger = create_logger("ws")
 
 from qbit import set_qbit_port
+from util import get_totp
 
 class Csrf(TypedDict):
     """CSRF type dict"""
@@ -80,7 +81,7 @@ class Windscribe:
             "csrf_token": self.csrf["csrf_token"],
             "username": config.USERNAME,
             "password": config.PASSWORD,
-            "code": "",
+            "code": get_totp(config.TOTP_TOKEN) if config.TOTP_TOKEN else "",
         }
         self.client.post(config.LOGIN_URL, data=data)
         self.logger.debug("login successful")
