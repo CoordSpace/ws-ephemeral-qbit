@@ -26,7 +26,7 @@ EPHEM_URL: str = STATICIP + "load"
 DEL_EPHEM_URL: str = STATICIP + "deleteEphPort"
 SET_EPHEM_URL: str = STATICIP + "postEphPort"
 
-DEBUG: bool = bool(os.environ.get("WS_DEBUG"))
+DEBUG: bool = str(os.environ.get("DEBUG")).lower() == "true"
 
 USERNAME: Optional[str] = os.environ.get("WS_USERNAME")
 PASSWORD: Optional[str] = os.environ.get("WS_PASSWORD")

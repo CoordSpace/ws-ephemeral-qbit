@@ -15,7 +15,7 @@ Environment variables:
 | QB_PASSWORD   | qBittorrent WebUI password          |         |
 | QB_PORT       | qBittorrent WebUI port              |         |
 | QB_HOST       | qBittorrent WebUI URL (except port) |         |
-| WS_DEBUG         | Enable debug logging             | False   |
+| DEBUG         | Enable debug logging                | False   |
 
 Available tags for docker image:
 
