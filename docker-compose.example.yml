@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   ws-ephemeral-qbit:
-    build: coordspace/ws-ephemeral-qbit:latest
+    image: coordspace/ws-ephemeral-qbit:latest
     container_name: ws-ephemeral-qbit
     restart: unless-stopped
     environment:
