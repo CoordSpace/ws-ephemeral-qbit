@@ -4,22 +4,18 @@ This project aims to automate requesting an ephemeral matched port from windscri
 
 ## Docker Compose Setup
 
-```yaml
-  ws-ephemeral-qbit:
-    image: coordspace/ws-ephemeral-qbit:latest
-    container_name: ws-ephemeral-qbit
-    environment:
-      - WS_USERNAME=
-      - WS_PASSWORD=
-      - QB_USERNAME=
-      - QB_PASSWORD=
-      - QB_PORT=8080
-      - QB_HOST=http://localhost
-      - WS_DEBUG=TRUE
-    labels:
-      - traefik.enable=false
-    restart: "no"
-```
+Environment variables:
+
+| Variable      | Function                            | Default |
+| ------------- | ----------------------------------- | ------- |
+| WS_USERNAME   | Windscribe username                 |         |
+| WS_PASSWORD   | Windscribe password                 |         |
+| WS_TOTP_TOKEN | Windscribe 2FA Token                |         |
+| QB_USERNAME   | qBittorrent WebUI username          |         |
+| QB_PASSWORD   | qBittorrent WebUI password          |         |
+| QB_PORT       | qBittorrent WebUI port              |         |
+| QB_HOST       | qBittorrent WebUI URL (except port) |         |
+| DEBUG         | Enable debug logging                | False   |
 
 Available tags for docker image:
 

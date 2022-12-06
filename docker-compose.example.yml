@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  ws-ephemeral-qbit:
+    image: coordspace/ws-ephemeral-qbit:latest
+    container_name: ws-ephemeral-qbit
+    restart: unless-stopped
+    environment:
+      - WS_USERNAME=username
+      - WS_PASSWORD=password
+      - WS_TOTP_TOKEN=
+      - QB_USERNAME=username
+      - QB_PASSWORD=password
+      - QB_PORT=8080
+      - QB_HOST=http://localhost
+      - DEBUG=True
+    labels:
+      - "traefik.enable=false"

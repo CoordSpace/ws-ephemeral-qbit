@@ -11,3 +11,4 @@ soupsieve==2.3.2.post1; python_version >= "3.6" and python_full_version >= "3.6.
 schedule==1.1.0; python_version >= "3.6" and python_full_version >= "3.6.0"
 qbittorrent-api==2022.10.39; python_version >= "3.6" and python_full_version >= "3.6.0"
 python-dotenv==0.21.0; python_version >= "3.6" and python_full_version >= "3.6.0"
+pyotp>=2.7.0; python_version >= "3.7"

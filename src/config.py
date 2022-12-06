@@ -26,10 +26,11 @@ EPHEM_URL: str = STATICIP + "load"
 DEL_EPHEM_URL: str = STATICIP + "deleteEphPort"
 SET_EPHEM_URL: str = STATICIP + "postEphPort"
 
-DEBUG: bool = bool(os.environ.get("WS_DEBUG"))
+DEBUG: bool = str(os.environ.get("DEBUG")).lower() == "true"
 
 USERNAME: Optional[str] = os.environ.get("WS_USERNAME")
 PASSWORD: Optional[str] = os.environ.get("WS_PASSWORD")
+TOTP_TOKEN: Optional[str] = os.environ.get("WS_TOTP_TOKEN")
 
 QBUSERNAME: Optional[str] = os.environ.get("QB_USERNAME")
 QBPASSWORD: Optional[str] = os.environ.get("QB_PASSWORD")
