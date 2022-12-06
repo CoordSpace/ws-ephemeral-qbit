@@ -1,9 +1,10 @@
-# WS-EPHEMERAL-QBIT
-[![Docker](https://img.shields.io/static/v1?label=Docker&logo=docker&message=latest image&style=for-the-badge)](https://hub.docker.com/r/coordspace/ws-ephemeral-qbit/builds) [![GHCR](https://img.shields.io/static/v1?label=GHCR.io&message=latest image&style=for-the-badge)](https://github.com/users/CoordSpace/packages/container/package/ws-ephemeral-qbit) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# WS-EPHEMERAL-QBIT 
 
 This project aims to automate requesting an ephemeral matched port from WindScribe then update a qBittorrent client's config to match. Once the setup is done it sleeps for 6 days before requesting a new port. This tool assumes you have a WindScribe Pro account and a qBittorrent client with accessible webui.
+
+<a href="https://hub.docker.com/r/coordspace/ws-ephemeral-qbit/builds"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=Docker&logo=docker&message=latest image" /></a> <a href="https://github.com/users/CoordSpace/packages/container/package/ws-ephemeral-qbit"><img src="https://img.shields.io/static/v1?label=GHCR.io&message=latest image&style=for-the-badge" /></a> <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Docker Compose Setup
 
