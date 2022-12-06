@@ -40,6 +40,4 @@ jobs:
           push: true
           tags: |
             coordspace/ws-ephemeral-qbit:latest
-            coordspace/ws-ephemeral-qbit:{{date 'YYYYMMDD'}}
             ghcr.io/coordspace/ws-ephemeral-qbit:latest
-            ghcr.io/coordspace/ws-ephemeral-qbit:{{date 'YYYYMMDD'}}
