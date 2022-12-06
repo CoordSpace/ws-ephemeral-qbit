@@ -1,4 +1,7 @@
 # WS-EPHEMERAL-QBIT
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 This project aims to automate requesting an ephemeral matched port from WindScribe then update a qBittorrent client's config to match. Once the setup is done it sleeps for 6 days before requesting a new port. This tool assumes you have a WindScribe Pro account and a qBittorrent client with accessible webui.
 
@@ -34,6 +37,20 @@ If you have further questions or concerns, please open an issue.
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/Trigus42"><img src="https://avatars.githubusercontent.com/u/59501676?v=4?s=100" width="100px;" alt="Trigus42"/><br /><sub><b>Trigus42</b></sub></a><br /><a href="https://github.com/CoordSpace/ws-ephemeral-qbit/commits?author=Trigus42" title="Code">💻</a> <a href="https://github.com/CoordSpace/ws-ephemeral-qbit/commits?author=Trigus42" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
