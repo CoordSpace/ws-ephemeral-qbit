@@ -1,6 +1,6 @@
 # WS-EPHEMERAL-QBIT 
 
-This project aims to automate requesting an ephemeral matched port from WindScribe then update a qBittorrent client's config to match. Once the setup is done it sleeps for 6 days before requesting a new port. This tool assumes you have a WindScribe Pro account and a qBittorrent client with accessible webui.
+This project aims to automate requesting an ephemeral matched port from Windscribe then update a qBittorrent client's config to match. Once the setup is done it sleeps for 6 days before requesting a new port. This tool assumes you have a Windscribe Pro account and a qBittorrent client with accessible webui.
 
 <a href="https://hub.docker.com/r/coordspace/ws-ephemeral-qbit/builds"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=Docker&logo=docker&message=latest image" /></a> <a href="https://github.com/users/CoordSpace/packages/container/package/ws-ephemeral-qbit"><img src="https://img.shields.io/static/v1?label=GHCR.io&message=latest image&style=for-the-badge" /></a> <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge)](#contributors-)
@@ -29,7 +29,7 @@ Available tags for docker image:
 
 ## Privacy
 
-I assure you that nothing is being collected or logged. Any configuration credentials are stored solely on your device and used only when needed as part of authentication with WindScribe and your qBittorrent instance.
+I assure you that nothing is being collected or logged. Any configuration credentials are stored solely on your device and used only when needed as part of authentication with Windscribe and your qBittorrent instance.
 
 In general it's recommended to always go over the source for tools that use login credentials. After you've read through the source, feel free to compile the docker image yourself!
 
